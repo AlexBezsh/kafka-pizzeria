@@ -1,0 +1,33 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="2" author="alexbezsh">
+        <insert tableName="pizzas">
+            <column name="name" value="Pizza 1"/>
+            <column name="price" value="12.23"/>
+            <column name="description" value="Pizza 1 Description"/>
+        </insert>
+        <insert tableName="pizzas">
+            <column name="name" value="Pizza 2"/>
+            <column name="price" value="33.33"/>
+            <column name="description" value="Pizza 2 Description"/>
+        </insert>
+        <insert tableName="pizzas">
+            <column name="name" value="Pizza 3"/>
+            <column name="price" value="123.77"/>
+            <column name="description" value="Pizza 3 Description"/>
+        </insert>
+        <insert tableName="pizzas">
+            <column name="name" value="Pizza 4"/>
+            <column name="price" value="0.2"/>
+            <column name="description" value="Pizza 4 Description"/>
+        </insert>
+        <insert tableName="pizzas">
+            <column name="name" value="Pizza 5"/>
+            <column name="price" value="34"/>
+            <column name="description" value="Pizza 5 Description"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

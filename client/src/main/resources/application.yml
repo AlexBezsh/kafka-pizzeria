@@ -1,0 +1,43 @@
+server:
+  servlet:
+    context-path: /pizzeria
+
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_URL}
+    consumer:
+      group-id: client
+      auto-offset-reset: earliest
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  jpa:
+    show-sql: false
+    database-platform: ${DB_DIALECT}
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: ${DB_DRIVER_CLASS_NAME}
+  liquibase:
+    change-log: classpath:db/changelog.xml
+
+kafka:
+  message-source: client
+  message-source-header: message-source
+  order-topic:
+    name: order-topic
+    partitions: 3
+    replication-factor: 1
+  notification-topic:
+    name: notification-topic
+    partitions: 3
+    replication-factor: 1
+
+springdoc:
+  swagger-ui:
+    tagsSorter: alpha
+    operations-sorter: alpha
+  override-with-generic-response: false

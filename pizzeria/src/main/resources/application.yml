@@ -1,0 +1,16 @@
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_URL}
+    consumer:
+      group-id: pizzeria
+      auto-offset-reset: earliest
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+kafka:
+  message-source: pizzeria
+  message-source-header: message-source
+  cooking-time-ms: 10000
+  order-topic:
+    name: order-topic
